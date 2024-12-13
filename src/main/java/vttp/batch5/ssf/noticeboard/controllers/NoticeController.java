@@ -45,6 +45,7 @@ public class NoticeController {
             } catch (Exception e) {
                 e.printStackTrace();
                 binding.addError(new ObjectError("noticeFailed", "Notice did not meet criteria to be posted"));
+                model.addAttribute("errormessage", e.getMessage());
                 return "view3";
             }
         }

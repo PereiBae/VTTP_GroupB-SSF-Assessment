@@ -48,6 +48,6 @@ ENV REST_API_LINK=""
 
 EXPOSE ${PORT}
 
-HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 CMD curl -s -f http://localhost:8080/status || exit 1
+HEALTHCHECK --interval=60s --timeout=30s --start-period=120s --retries=3 CMD curl -s -f http://localhost:8080/status || exit 1
 
 ENTRYPOINT java -jar app.jar
