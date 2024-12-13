@@ -13,7 +13,6 @@ import org.springframework.web.util.UriComponentsBuilder;
 import vttp.batch5.ssf.noticeboard.repositories.NoticeRepository;
 
 import java.io.StringReader;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -83,6 +82,7 @@ public class NoticeService {
 		throw new Exception(errorMessage);
 	}
 
+	// Convert List to a JsonArray
 	private JsonArray categoryJson(List<String> categories) {
 		JsonArray jsonArray = null;
 		JsonArrayBuilder jsonArrayBuilder = Json.createArrayBuilder();
@@ -94,7 +94,7 @@ public class NoticeService {
 
 	public boolean getRandomKey(){
 		try{
-			noticeRepo.getRandomKey();
+			String healthCheck = noticeRepo.getRandomKey();
 			return true;
 		} catch (Exception e) {
 			return false;
