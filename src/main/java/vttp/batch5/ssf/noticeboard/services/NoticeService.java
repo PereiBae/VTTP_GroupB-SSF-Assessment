@@ -92,7 +92,12 @@ public class NoticeService {
 		return jsonArray = jsonArrayBuilder.build();
 	}
 
-	public String getRandomKey(){
-		return noticeRepo.getRandomKey();
+	public boolean getRandomKey(){
+		try{
+			noticeRepo.getRandomKey();
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
 	}
 }

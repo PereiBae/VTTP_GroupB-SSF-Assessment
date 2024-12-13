@@ -34,7 +34,7 @@ public class NoticeRepository {
 	}
 
 	// randomkey
-	public String getRandomKey(){
+	public String getRandomKey() throws Exception{
 		return (String) redisTemplate.randomKey();
 	}
 

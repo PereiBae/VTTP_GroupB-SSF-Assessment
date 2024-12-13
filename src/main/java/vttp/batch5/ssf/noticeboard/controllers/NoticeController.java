@@ -54,8 +54,7 @@ public class NoticeController {
     @GetMapping(value = "/status", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public ResponseEntity<HttpStatus> getStatus() {
-        String randomKey = noticeSvc.getRandomKey();
-        if (randomKey == null) {
+        if (noticeSvc.getRandomKey()) {
             return new ResponseEntity<>(HttpStatus.valueOf(503));
         }
         return new ResponseEntity<>(HttpStatus.valueOf(200));
